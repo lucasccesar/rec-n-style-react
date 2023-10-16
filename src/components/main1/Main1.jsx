@@ -4,6 +4,7 @@ import classes from './Main1.module.css';
 import Slider from './slider/Slider';
 import sobre from '../../assets/UI/sobre.svg'
 
+
 const Main1 = (props) => {
     return (
         <div id="main1" className={classes.main}>
@@ -23,3 +24,4 @@ const Main1 = (props) => {
 };
 
 export default Main1;
+                                                                                       

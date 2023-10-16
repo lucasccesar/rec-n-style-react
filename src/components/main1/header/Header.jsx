@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Header.module.css';
 
-import logo from '../../assets/UI/logo.svg';
+import logo from '../../../assets/UI/logo.svg';
 
 const Header = ({ onOpenSidebar }) => {
     const material = 'material-symbols-rounded';
@@ -9,7 +9,7 @@ const Header = ({ onOpenSidebar }) => {
 
     return (
         <header>
-            <span className={material} style={{ fontSize: '10vw' }} id="menu" onClick={onOpenSidebar}>
+            <span className={material} style={{ fontSize: '10vw', overflowY: 'hidden' }} id="menu" onClick={onOpenSidebar}>
                 Menu
             </span>
             <img src={logo} alt="logo REC 'N' STYLE" id={classes.logo} />

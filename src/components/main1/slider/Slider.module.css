@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
 *{
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 #slider {
@@ -12,6 +12,7 @@
     border: 3px solid white;
     border-radius: 10px;
     position: relative;
+    overflow-y: hidden;
 }
 
 #sliderPhotos {
