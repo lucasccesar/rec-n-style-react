@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@100;300;400&display=swap');
 
 * {
+    margin: 0px;
+    padding: 0px;
     font-family: 'Roboto', sans-serif;
     font-family: 'Roboto Condensed', sans-serif;
 }
@@ -24,7 +26,7 @@
 #sidebarHalf1 {
     position: relative;
     width: 40vw;
-    background-color: red;
+    background-color: white;
 }
 
 #sidebarHalf2 {

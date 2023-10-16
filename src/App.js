@@ -1,31 +1,42 @@
-import React, { useState, Fragment, useEffect } from 'react';
+import React, { Fragment, useReducer } from 'react';
 
 import './App.css';
 import Header from './components/header/Header';
-import Sidebar from './sidebar/Sidebar';
+import Sidebar from './components/sidebar/Sidebar';
+import Main1 from './components/main1/Main1'
+
+const reducer = (state, action) => {
+    switch (action.type) {
+        case 'open':
+            return { isSidebarOpen: true, sidebarMargin: '0vw', sidebarHalfDisplay: 'block' };
+        case 'close':
+            return { isSidebarOpen: false, sidebarMargin: '-40vw', sidebarHalfDisplay: 'none' };
+    }
+};
 
 function App() {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const [sidebarMargin, setSidebarMargin] = useState('-40vw');
-    const [sidebarHalfDisplay, setSidebarHalfDisplay] = useState('none');
-    console.log('state')
+    const [state, dispatch] = useReducer(reducer, {
+        isSidebarOpen: false,
+        sidebarMargin: '-40vw',
+        sidebarHalfDisplay: 'none',
+    });
+
+	const {isSidebarOpen, sidebarMargin, sidebarHalfDisplay} = state
 
     function openSidebarHandler() {
-        setIsSidebarOpen(true);
-        setSidebarMargin('0vw');
-        setSidebarHalfDisplay('block');
+        dispatch({ type: 'open' });
     }
 
     function closeSidebarHandler() {
-        setIsSidebarOpen(false);
-        setSidebarMargin('-40vw');
-        setSidebarHalfDisplay('none');
+        dispatch({ type: 'close' });
     }
 
     return (
         <Fragment>
-            <Sidebar onCloseSidebar={closeSidebarHandler} sidebarMargin={sidebarMargin} sidebarHalfDisplay={sidebarHalfDisplay}/>
-            <Header onOpenSidebar={openSidebarHandler} />
+            <Sidebar onCloseSidebar={closeSidebarHandler} sidebarMargin={sidebarMargin} sidebarHalfDisplay={sidebarHalfDisplay} />
+            <Main1>
+                <Header onOpenSidebar={openSidebarHandler} />
+            </Main1>
         </Fragment>
     );
 }

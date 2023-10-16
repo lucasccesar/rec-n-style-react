@@ -1,0 +1,7 @@
+.main {
+    background-image: -webkit-linear-gradient(bottom, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 10%), url('../../assets/mobile/backgroundMobile.png');
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: fit-content;
+}
