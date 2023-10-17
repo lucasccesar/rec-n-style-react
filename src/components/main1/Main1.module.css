@@ -24,7 +24,7 @@
 
 .anchor {
     display: block;
-    height: 115px; 
+    height: 115px;
     margin-top: -115px;
     visibility: hidden;
 }
